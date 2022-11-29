@@ -3,6 +3,7 @@ package arithmetic
 import (
 	"testing"
 
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
@@ -48,4 +49,10 @@ func TestDivision(t *testing.T) {
 	}
 
 	require.Equal(t, int32(1), answer)
+}
+
+func TestDivisionByZero(t *testing.T) {
+	arith := NewAdapter()
+	_, err := arith.Division(1, 0)
+	assert.NotNil(t, err)
 }
