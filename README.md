@@ -21,7 +21,9 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 
 ## Running Tests
 
-```
+```sh
+# gen-grpc only needs to be run once OR if the *.proto files are updated
 task gen-grpc
+
 task test
 ```
