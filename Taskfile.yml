@@ -1,0 +1,11 @@
+version: "3"
+
+tasks:
+  gen-grpc:
+    cmds:
+      - protoc --go_out=internal/adapters/framework/driving/grpc --proto_path=internal/adapters/framework/driving/grpc/proto internal/adapters/framework/driving/grpc/proto/number_message.proto
+      - protoc --go-grpc_out=require_unimplemented_servers=false:internal/adapters/framework/driving/grpc --proto_path=internal/adapters/framework/driving/grpc/proto internal/adapters/framework/driving/grpc/proto/arithmetic_service.proto
+
+  test:
+    cmds:
+      - docker-compose up
