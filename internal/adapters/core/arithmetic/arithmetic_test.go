@@ -48,6 +48,7 @@ func TestDivision(t *testing.T) {
 		t.Fatalf("expected: %v, got: %v", nil, err)
 	}
 
+	assert.Nil(t, err)
 	require.Equal(t, int32(1), answer)
 }
 

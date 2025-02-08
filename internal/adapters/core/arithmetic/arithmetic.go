@@ -25,5 +25,5 @@ func (arithmetic Adapter) Division(a, b int32) (val int32, err error) {
 		}
 	}()
 
-	return a / b, err
+	return a / b, nil
 }
